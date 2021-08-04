@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Gallery from './components/Gallery';
+import Gallery from "./components/Gallery";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Gallery></Gallery>
 				</article>
 			</main>
+			<Footer></Footer>
 		</div>
 	);
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import blenderIcon from "../img/blender icon.svg";
 import "./Header.css";
 
 const Header = () => {
@@ -14,7 +15,8 @@ const Header = () => {
 					</div>
 					<div className="retain-height center-vertically">
 						<a href="https://www.blender.org/" target="_blank" rel="noreferrer">
-							<img className="header-logo" src="./img/blender icon.svg" alt="Blender logo" />  
+							{/* <img className="header-logo" src="/blender icon.svg" alt="Blender" />*/}
+							<img className="header-logo" src={blenderIcon} alt="Blender" />
 						</a>
 					</div>
 					<div className="center-vertically">

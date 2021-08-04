@@ -4,6 +4,15 @@ import "./Gallery.css";
 const imgUrls = [
 	"https://i.postimg.cc/SKbBs5DS/my-first-render-ever.png",
 	"https://i.postimg.cc/TwYSKNHB/glass-render-wit-cycles.png",
+	"https://i.postimg.cc/6QTBPMKg/donut-texture-paint-cycles.png",
+	"https://i.postimg.cc/3NzGykBJ/cycles.png",
+];
+
+const imgNames = [
+	"My first render ever",
+	"Glass Suzanne",
+	"Donut via Blender Guru",
+	"Broken ceramics",
 ];
 
 class Gallery extends React.Component {
@@ -15,19 +24,24 @@ class Gallery extends React.Component {
 	}
 
 	componentDidMount() {
+		const previewTitle = document.querySelector(".gallery-title");
 		const galleryPreview = document.querySelector(".gallery-preview");
 		const galleryThumbnails = document.querySelector(".gallery-thumbnails");
 
 		const previewImg = document.createElement("img");
+
+		previewTitle.textContent = imgNames[0];
+		previewImg.setAttribute("src", imgUrls[0]);
+
 		imgUrls.forEach((url, index) => {
-			console.log(index);
-			if(index === 0)
-				previewImg.setAttribute("src", url)
+			// console.log(index);
 			const img = document.createElement("img");
 			img.setAttribute("src", url);
+			img.setAttribute("imgId", index);
 			img.onclick = (evt) => {
 				// console.log(evt.target.getAttribute("src"));	
 				galleryPreview.firstChild.src = evt.target.getAttribute("src");
+				previewTitle.textContent = imgNames[evt.target.getAttribute("imgId")];
 			}
 			galleryThumbnails.appendChild(img);
 		})
@@ -52,7 +66,10 @@ class Gallery extends React.Component {
 	render() {
 		return (
 			<div className="gallery">
-				<div className="gallery-preview">
+				<div className="gallery-title-area">
+					<h1 className="gallery-title"></h1>
+				</div>
+				<div className="gallery-preview flex">
 				</div>
 				<div className="gallery-thumbnails flex">
 				</div>

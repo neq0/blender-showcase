@@ -1,0 +1,33 @@
+footer {
+	color: white;
+	font-size: 1.1em;
+	background-color: rgb(101, 147, 182);
+	padding: 10px 20px;
+}
+
+footer p {
+	margin: unset;
+}
+
+footer .my-info {
+	margin: 10px 0;
+}
+
+footer a {
+	color: unset;
+}
+
+footer a.twitter::before {
+	display: inline-block;
+	content: "";
+	background-image: url("/src/img/icons8-twitter-96px.png");
+	background-size: 1.3em 1.3em;
+	height: 1.3em;
+	width: 1.3em;
+	background-repeat: no-repeat;
+	vertical-align: -.4em;
+}
+
+footer .smaller {
+	font-size: 0.9em;
+}

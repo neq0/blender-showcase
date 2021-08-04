@@ -1,14 +1,34 @@
 .gallery {
-	background-color: rgb(82, 82, 82);
+	/* background-color: rgb(82, 82, 82); */
+}
+
+.gallery .flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.gallery .gallery-title-area {
+	padding: 20px;
+	color: white;
+}
+
+.gallery .gallery-title {
+	font-family: 'Playfair Display', serif;
+	font-size: 1.6em;
+	letter-spacing: .04em;
+	margin: unset;
 }
 
 .gallery-preview {
     /* border: 1px solid black; */
+	padding: 20px;
+	border-top: 3px solid lightgray;
 	border-bottom: 3px solid lightgray;
 }
 
 .gallery-preview img {
-    width: 600px;
+    width: 800px;
     /* border: 4px solid black; */
 }
 
