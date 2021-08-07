@@ -6,6 +6,8 @@ const imgUrls = [
 	"https://i.postimg.cc/TwYSKNHB/glass-render-wit-cycles.png",
 	"https://i.postimg.cc/6QTBPMKg/donut-texture-paint-cycles.png",
 	"https://i.postimg.cc/3NzGykBJ/cycles.png",
+	"https://i.postimg.cc/sxnbHg5w/amongusnaut-render-2.png",
+	"https://i.postimg.cc/sXCtLLqG/backvote-side.png",
 ];
 
 const imgNames = [
@@ -13,6 +15,8 @@ const imgNames = [
 	"Glass Suzanne",
 	"Donut via Blender Guru",
 	"Broken ceramics",
+	"Amongusnaut",
+	"Reddit Backvote",
 ];
 
 class Gallery extends React.Component {
@@ -47,33 +51,21 @@ class Gallery extends React.Component {
 		})
 
 		galleryPreview.appendChild(previewImg);
-		// setTimeout(() => {
-		// 	imgs.forEach(img => {
-		// 		fetch(img)
-		// 		.then(respone => respone.blob())
-		// 		.then(blob => {
-		// 			const objectURL = URL.createObjectURL(blob);
-		// 			document.querySelector("#img1").src = objectURL;
-		// 		})
-		// 	});
-		// }, 2000);
-		
-		// this.setState({
-		// 	imgsLoaded: true,
-		// });
 	}
 
 	render() {
 		return (
-			<div className="gallery">
-				<div className="gallery-title-area">
-					<h1 className="gallery-title"></h1>
+			<article>
+				<div className="gallery">
+					<div className="gallery-title-area">
+						<h1 className="gallery-title"></h1>
+					</div>
+					<div className="gallery-preview">
+					</div>
+					<div className="gallery-thumbnails">
+					</div>
 				</div>
-				<div className="gallery-preview flex">
-				</div>
-				<div className="gallery-thumbnails flex">
-				</div>
-			</div>
+			</article>
 		);
 	}
 }

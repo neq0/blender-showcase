@@ -3,6 +3,7 @@ footer {
 	font-size: 1.1em;
 	background-color: rgb(101, 147, 182);
 	padding: 10px 20px;
+	/* text-align: left; */
 }
 
 footer p {
@@ -10,7 +11,7 @@ footer p {
 }
 
 footer .my-info {
-	margin: 10px 0;
+	margin: .5em 0;
 }
 
 footer a {
@@ -28,6 +29,13 @@ footer a.twitter::before {
 	vertical-align: -.4em;
 }
 
-footer .smaller {
+footer .credits {
 	font-size: 0.9em;
+	margin: .3em 0;
+}
+
+@media only screen and (min-width: 600px) {
+	footer {
+		font-size: 1.3em;
+	}
 }

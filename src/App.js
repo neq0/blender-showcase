@@ -5,19 +5,17 @@ import Nav from "./components/Nav";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
 	return (
 		<div className="App">
 			<Header></Header>
 			<Nav></Nav>
 			<main>
-				<article>
-					<Gallery></Gallery>
-				</article>
+				<Gallery></Gallery>
 			</main>
 			<Footer></Footer>
 		</div>
 	);
-}
+};
 
 export default App;
