@@ -1,56 +1,63 @@
 import React from 'react';
 import "./Gallery.css";
 
-const imgUrls = [
-	"https://i.postimg.cc/SKbBs5DS/my-first-render-ever.png",
-	"https://i.postimg.cc/TwYSKNHB/glass-render-wit-cycles.png",
-	"https://i.postimg.cc/6QTBPMKg/donut-texture-paint-cycles.png",
-	"https://i.postimg.cc/3NzGykBJ/cycles.png",
-	"https://i.postimg.cc/sxnbHg5w/amongusnaut-render-2.png",
-	"https://i.postimg.cc/sXCtLLqG/backvote-side.png",
-];
-
-const imgNames = [
-	"My first render ever",
-	"Glass Suzanne",
-	"Donut via Blender Guru",
-	"Broken ceramics",
-	"Amongusnaut",
-	"Reddit Backvote",
-];
-
 class Gallery extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			imgsLoaded: false,
-		};
+		this.state = {};
+	}
+
+	updatePreview(imgIndex) {
+		if(this.state.previewIndex == imgIndex)
+			return;
+		this.setState({ previewIndex: imgIndex, });
+		const previewImg = document.querySelector(".gallery-preview-img");
+		previewImg.setAttribute("src", this.state.imgUrls[imgIndex]);
+		const previewTitle = document.querySelector(".gallery-preview-title");
+		previewTitle.textContent = this.state.imgNames[imgIndex];
 	}
 
 	componentDidMount() {
-		const previewTitle = document.querySelector(".gallery-title");
 		const galleryPreview = document.querySelector(".gallery-preview");
-		const galleryThumbnails = document.querySelector(".gallery-thumbnails");
-
 		const previewImg = document.createElement("img");
-
-		previewTitle.textContent = imgNames[0];
-		previewImg.setAttribute("src", imgUrls[0]);
-
-		imgUrls.forEach((url, index) => {
-			// console.log(index);
-			const img = document.createElement("img");
-			img.setAttribute("src", url);
-			img.setAttribute("imgId", index);
-			img.onclick = (evt) => {
-				// console.log(evt.target.getAttribute("src"));	
-				galleryPreview.firstChild.src = evt.target.getAttribute("src");
-				previewTitle.textContent = imgNames[evt.target.getAttribute("imgId")];
-			}
-			galleryThumbnails.appendChild(img);
-		})
-
+		previewImg.classList.add("gallery-preview-img");
 		galleryPreview.appendChild(previewImg);
+		
+		fetch("https://raw.githubusercontent.com/birdue/blender-showcase/main/public/info/showcase.json")
+		.then(response => {
+			if(!response.ok) {
+				throw new Error(`Fetching JSON: HTTP status ${response.status}`);
+			}
+			return response.json();
+		})
+		.then(imgInfoArr => {
+			const galleryThumbs = document.querySelector(".gallery-thumbnails");
+
+			const imgNames = [];
+			const imgUrls = [];
+			
+			imgInfoArr.forEach((imgInfo, index) => {
+				const imgName = imgInfo.name;
+				imgNames.push(imgName);
+				const imgUrl = imgInfo.url;
+				imgUrls.push(imgUrl);
+
+				const img = document.createElement("img");
+				img.setAttribute("src", imgUrl);
+				img.setAttribute("imgIndex", index);
+
+				// img.onclick = evt => this.updatePreview(evt.target.getAttribute("imgIndex"));
+				img.addEventListener("click", evt => this.updatePreview(evt.target.getAttribute("imgIndex")));
+
+				galleryThumbs.appendChild(img);
+			});
+
+			this.setState({
+				imgNames: imgNames,
+				imgUrls: imgUrls,
+			}, () => this.updatePreview(0));
+		})
+		.catch(err => console.error(err));
 	}
 
 	render() {
@@ -58,7 +65,7 @@ class Gallery extends React.Component {
 			<article>
 				<div className="gallery">
 					<div className="gallery-title-area">
-						<h1 className="gallery-title"></h1>
+						<h1 className="gallery-preview-title"></h1>
 					</div>
 					<div className="gallery-preview">
 					</div>
