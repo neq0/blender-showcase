@@ -1,14 +1,14 @@
 nav {
-    /* height: 50px; */
-    background-color: rgb(255, 141, 80);
+	/* height: 50px; */
+	background-color: rgb(255, 141, 80);
 }
 
 nav .nav-row {
 	height: 100%;
-    padding: 0 10px;
+	padding: 0 10px;
 	display: flex;
 	flex-direction: row;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: center;
 }
 
@@ -26,7 +26,6 @@ nav .nav-button {
 	nav .nav-row {
 		padding: 0px 30px;
 	}
-
 	nav .nav-button {
 		font-size: 1.4em;
 		padding: 12px 20px;

@@ -8,7 +8,7 @@ class Gallery extends React.Component {
 	}
 
 	updatePreview(imgIndex) {
-		if(this.state.previewIndex == imgIndex)
+		if(this.state.previewIndex === imgIndex)
 			return;
 		this.setState({ previewIndex: imgIndex, });
 		const previewImg = document.querySelector(".gallery-preview-img");
