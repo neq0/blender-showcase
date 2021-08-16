@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/blender-showcase/static/css/main.0e6d47ae.chunk.css",
-    "main.js": "/blender-showcase/static/js/main.23044adc.chunk.js",
-    "main.js.map": "/blender-showcase/static/js/main.23044adc.chunk.js.map",
+    "main.css": "/blender-showcase/static/css/main.57fd1d2d.chunk.css",
+    "main.js": "/blender-showcase/static/js/main.3ecb2d84.chunk.js",
+    "main.js.map": "/blender-showcase/static/js/main.3ecb2d84.chunk.js.map",
     "runtime-main.js": "/blender-showcase/static/js/runtime-main.64aee7cd.js",
     "runtime-main.js.map": "/blender-showcase/static/js/runtime-main.64aee7cd.js.map",
     "static/js/2.37ea8cef.chunk.js": "/blender-showcase/static/js/2.37ea8cef.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f1978603.chunk.js": "/blender-showcase/static/js/3.f1978603.chunk.js",
     "static/js/3.f1978603.chunk.js.map": "/blender-showcase/static/js/3.f1978603.chunk.js.map",
     "index.html": "/blender-showcase/index.html",
-    "static/css/main.0e6d47ae.chunk.css.map": "/blender-showcase/static/css/main.0e6d47ae.chunk.css.map",
+    "static/css/main.57fd1d2d.chunk.css.map": "/blender-showcase/static/css/main.57fd1d2d.chunk.css.map",
     "static/js/2.37ea8cef.chunk.js.LICENSE.txt": "/blender-showcase/static/js/2.37ea8cef.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.64aee7cd.js",
     "static/js/2.37ea8cef.chunk.js",
-    "static/css/main.0e6d47ae.chunk.css",
-    "static/js/main.23044adc.chunk.js"
+    "static/css/main.57fd1d2d.chunk.css",
+    "static/js/main.3ecb2d84.chunk.js"
   ]
 }
